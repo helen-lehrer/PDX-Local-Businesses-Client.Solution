@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+@using MessageClient.Models
+@model MessageClient.Models.Message
+
+<h4>Add a Message</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.Label("Title")
+  @Html.TextBoxFor(model => model.Title)
+  @Html.Label("Message Body")
+  @Html.TextBoxFor(model => model.Body)
+  @Html.Label("Date")
+  @Html.TextBoxFor(model => model.Date)
+  @Html.Label("Author")
+  @Html.TextBoxFor(model => model.Author)
+  @Html.Label("Select Group Category")
+  @Html.DropDownList("GroupSelection")
+  <input type="submit" value="Add New Message">
+}

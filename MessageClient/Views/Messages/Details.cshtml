@@ -1,0 +1,16 @@
+@{
+	Layout = "_Layout";
+}
+
+@model MessageClient.Models.Message
+
+<h3>@Model.Title</h3>
+<h4>Posted @Model.Date by @Model.Author</h4>
+<p>@Model.Body</p>
+
+@using (Html.BeginForm("Delete", "Messages"))
+{
+
+	@* @Html.Hidden() *@
+	
+}

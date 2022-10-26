@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace MessageBoard.Models
+namespace MessageClient.Models
 {
   public class Message
   {
@@ -31,10 +31,10 @@ namespace MessageBoard.Models
 
     public static Message GetDetails(int id)
     {
-      var apiCallTask = ApiHelper.GetAll();
+      var apiCallTask = ApiHelper.Get(id);
       var result = apiCallTask.Result;
 
-      JObject jsonResponse = JsonConvert/DeserializeObject<JObject>(result);
+      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
       Message message = JsonConvert.DeserializeObject<Message>(jsonResponse.ToString());
 
       return message;
