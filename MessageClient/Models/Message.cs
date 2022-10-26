@@ -15,7 +15,7 @@ namespace MessageClient.Models
     public DateTime Date { get; set; }
     public string Author { get; set; }
     public int GroupId { get; set; }
-		// public Group Group { get; set; }
+		public Group Group { get; set; }
 	
 
     public static List<Message> GetMessages()
@@ -29,7 +29,7 @@ namespace MessageClient.Models
       return messageList;
     }
 
-    public static Message GetDetails(int id)
+    public static Message GetMsgDetails(int id)
     {
       var apiCallTask = ApiHelper.Get(id);
       var result = apiCallTask.Result;
@@ -40,19 +40,19 @@ namespace MessageClient.Models
       return message;
     }
 
-    public static void Post(Message message)
+    public static void PostMsg(Message message)
     {
       string jsonMessage = JsonConvert.SerializeObject(message);
       var apiCallTask = ApiHelper.Post(jsonMessage);
     }
 
-    public static void Put(Message message)
+    public static void PutMsg(Message message)
     {
       string jsonMessage = JsonConvert.SerializeObject(message);
       var apiCallTask = ApiHelper.Put(message.MessageId, jsonMessage);
     }
 
-    public static void Delete(int id)
+    public static void DeleteMsg(int id)
     {
       var apiCallTask = ApiHelper.Delete(id);
     }
