@@ -1,0 +1,15 @@
+@{
+	Layout = "_Layout"
+}
+
+<h2>All Messages</h2>
+
+<ul>
+	@foreach (Message message in Model)
+	{
+		<li>
+			<p><strong>@Html.ActionLink($"{@message.Title}", "Details", new {id = message.MessageId})</strong> - @message.Author | @message.Date</p>
+		</li>
+		<br>
+	}
+</ul>
