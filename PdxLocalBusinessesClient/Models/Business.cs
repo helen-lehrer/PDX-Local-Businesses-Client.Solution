@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 
-namespace PortlandLocalBusinessesClient.Models
+namespace PdxLocalBusinessesClient.Models
 {
   public class Business
   {

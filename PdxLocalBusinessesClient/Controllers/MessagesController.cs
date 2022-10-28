@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System;
-using PortlandLocalBusinessesClient.Models;
+using PdxLocalBusinessesClient.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace PortlandLocalBusinessesClient.Controllers
+namespace PdxLocalBusinessesClient.Controllers
 {
 	public class BusinesssController : Controller
 	{

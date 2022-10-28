@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using RestSharp;
 
-namespace PortlandLocalBusinessesClient.Models
+namespace PdxLocalBusinessesClient.Models
 {
 	class ApiHelper
 	{
