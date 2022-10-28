@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace PdxLocalBusinessesClient.Controllers
 {
-	public class BusinesssController : Controller
+	public class BusinessesController : Controller
 	{
 
 		public IActionResult Index()
