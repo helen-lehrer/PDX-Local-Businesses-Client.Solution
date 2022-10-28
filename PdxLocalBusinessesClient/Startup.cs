@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace MessageClient
+namespace PortlandLocalBusinessesClient
 {
     public class Startup
     {
