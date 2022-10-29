@@ -8,6 +8,9 @@ namespace PdxLocalBusinessesClient.Models
 		public static async Task<string> GetAllBusinesses()
 		{
 			RestClient client = new RestClient("http://localhost:5000/api");
+      // client.Authenticator = new OAuth2AuthorizationRequestHeaderAuthenticator(
+      //     EnvironmentalVariables.ApiKey, "Bearer"
+      // );
 			RestRequest request = new RestRequest($"businesses", Method.GET);
 			var response = await client.ExecuteTaskAsync(request);
 			return response.Content;
