@@ -14,7 +14,7 @@ namespace PdxLocalBusinessesClient.Controllers
 
 		public IActionResult Index()
 		{
-			List<Business> allBusinesses = Business.GetBusinesses();
+			var allBusinesses = Business.GetBusinesses();
 			return View(allBusinesses);
 		}
 

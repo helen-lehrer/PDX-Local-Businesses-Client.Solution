@@ -1,5 +1,8 @@
 using System.Threading.Tasks;
 using RestSharp;
+using RestSharp.Authenticators;
+using PdxLocalBusinessesClient.Models;
+using System;
 
 namespace PdxLocalBusinessesClient.Models
 {
@@ -7,10 +10,12 @@ namespace PdxLocalBusinessesClient.Models
 	{
 		public static async Task<string> GetAllBusinesses()
 		{
+      DotNetEnv.Env.Load();
+      var apiKey = Environment.GetEnvironmentVariable("API_KEY");
 			RestClient client = new RestClient("http://localhost:5000/api");
-      // client.Authenticator = new OAuth2AuthorizationRequestHeaderAuthenticator(
-      //     EnvironmentalVariables.ApiKey, "Bearer"
-      // );
+      client.Authenticator = new OAuth2AuthorizationRequestHeaderAuthenticator(
+          apiKey, "Bearer"
+      );
 			RestRequest request = new RestRequest($"businesses", Method.GET);
 			var response = await client.ExecuteTaskAsync(request);
 			return response.Content;
