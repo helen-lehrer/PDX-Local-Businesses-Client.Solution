@@ -8,10 +8,14 @@
 <ul>
 	@foreach (Business business in Model)
 	{
-		@* <li>
-			<p><strong>@Html.ActionLink($"{@business.Name}", "Details", new {id = business.BusinessId})</strong> - @business.Neighborhood.Name @business.Description | @business.PhoneNumber</p>
-		</li> *@
-    <li>@business.Name</li>
+		<li>
+			<p><strong>@Html.ActionLink(@business.Name, "Details", new {id = business.BusinessId})</strong> - @business.Description | @business.PhoneNumber</p>
+      @* <ul>@foreach (Neighborhood neighborhood in business)
+        {
+          <li>@neighborhood.Name</li>
+        }
+      </ul> *@
+		</li>
 		<br>
 	}
 </ul>
